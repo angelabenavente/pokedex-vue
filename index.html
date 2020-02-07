@@ -55,7 +55,7 @@
                   <div class="background-wrapper">
                      <div v-for="type in pokemon.types" :key="type" :style="{'background-color': colorType[type]}"></div>
                   </div>
-                  <span class="remove-pokemon">
+                  <span class="remove-pokemon" @click="removePokemon(pokemon)">
                      <i class="material-icons">close</i>
                   </span> 
                   <div class="image-wrapper">

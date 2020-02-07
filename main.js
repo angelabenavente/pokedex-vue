@@ -22,4 +22,11 @@ const app = new Vue ( {
       .then(response => response.json())
       .then(pokemons => this.pokemons = pokemons)
   },
+  methods: {
+    removePokemon(pokemon) {
+      this.pokemons = this.pokemons
+      .filter(
+        pokemonToRemove => pokemonToRemove.name !== pokemon.name)
+    }
+  }
 })
