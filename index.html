@@ -51,7 +51,7 @@
             <!-- Full Pokemons List in: https://raw.githubusercontent.com/rubnvp/vue-pokedex/master/data/pokemons.json -->
             <article class="pokemons-list">
                <!-- Pokemon Card -->
-               <div class="pokemon-card">
+               <div class="pokemon-card" v-for="pokemon in pokemons" :key="pokemon.name">
                   <div class="background-wrapper">
                      <div v-for="type in pokemon.types" :key="type" :style="{'background-color': colorType[type]}"></div>
                   </div>
@@ -65,23 +65,6 @@
                      {{pokemon.name}}
                   </div>
                </div>
-               <!-- Pokemon Card -->
-               <!-- <div class="pokemon-card">
-                  <div class="background-wrapper">
-                     <div style="background-color: rgb(160, 64, 160);"></div>
-                     <div style="background-color: rgb(120, 200, 80);"></div>
-                  </div>
-                  <span class="remove-pokemon">
-                     <i class="material-icons">close</i>
-                  </span> 
-                  <div class="image-wrapper">
-                     <img src="images/pokemons/ivysaur.png" alt="bulbasaur" class="pokemon-image">
-                  </div>
-                  <div class="pokemon-title">
-                     ivysaur
-                  </div>
-               </div> -->
-
             </article>
          </main>
       </div>

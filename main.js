@@ -3,22 +3,7 @@ const app = new Vue ( {
   data() {
     return {
       message: 'hola Vue',
-      pokemon: {
-        "id":1,
-        "name":"bulbasaur",
-        "image":"images/pokemons/bulbasaur.png",
-        "types":[
-           "poison",
-           "grass"
-        ],
-        "abilities":[
-           "chlorophyll",
-           "overgrow"
-        ],
-        "experience":64,
-        "height":7,
-        "weight":69
-      },
+      pokemons: [],
       colorType: {
         "grass": "#78C850",
         "poison": "#A040A0",
@@ -30,5 +15,11 @@ const app = new Vue ( {
         "electric": "#F8D030"
       }
     }
+  },
+  created() {
+    console.log('created')
+    fetch('http://pokemon.pepeloper.com')
+      .then(response => response.json())
+      .then(pokemons => this.pokemons = pokemons)
   },
 })
