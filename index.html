@@ -53,14 +53,13 @@
                <!-- Pokemon Card -->
                <div class="pokemon-card">
                   <div class="background-wrapper">
-                     <div style="background-color: rgb(160, 64, 160);"></div>
-                     <div style="background-color: rgb(120, 200, 80);"></div>
+                     <div v-for="type in pokemon.types" :key="type" :style="{'background-color': colorType[type]}"></div>
                   </div>
                   <span class="remove-pokemon">
                      <i class="material-icons">close</i>
                   </span> 
                   <div class="image-wrapper">
-                     <img src="images/pokemons/bulbasaur.png" alt="bulbasaur" class="pokemon-image">
+                     <img :src="pokemon.image" :alt="pokemon.name" class="pokemon-image">
                   </div>
                   <div class="pokemon-title">
                      {{pokemon.name}}
