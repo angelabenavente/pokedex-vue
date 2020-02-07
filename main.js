@@ -2,7 +2,7 @@ const app = new Vue ( {
   'el': '#app',
   data() {
     return {
-      message: 'hola Vue',
+      search: '',
       pokemons: [],
       colorType: {
         "grass": "#78C850",
@@ -28,5 +28,12 @@ const app = new Vue ( {
       .filter(
         pokemonToRemove => pokemonToRemove.name !== pokemon.name)
     }
+  },
+  computed: {
+    filteredPokemons() {
+      return this.pokemons.filter(pokemonToFilter => {
+        return pokemonToFilter.name.includes(this.search)
+      });
+    },
   }
 })

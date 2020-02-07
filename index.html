@@ -21,7 +21,7 @@
          <aside class="pokedex-filters">
             <!-- Searchbox -->
             <div class="nice-input-wrapper">
-               <input type="text" placeholder="Search by name" class="nice-input">
+               <input v-model="search" type="text" placeholder="Search by name" class="nice-input">
                <span class="focus-border"><i></i></span>
             </div>
             <!-- Type Filters -->
@@ -51,7 +51,7 @@
             <!-- Full Pokemons List in: https://raw.githubusercontent.com/rubnvp/vue-pokedex/master/data/pokemons.json -->
             <article class="pokemons-list">
                <!-- Pokemon Card -->
-               <div class="pokemon-card" v-for="pokemon in pokemons" :key="pokemon.name">
+               <div class="pokemon-card" v-for="pokemon in filteredPokemons" :key="pokemon.name">
                   <div class="background-wrapper">
                      <div v-for="type in pokemon.types" :key="type" :style="{'background-color': colorType[type]}"></div>
                   </div>
